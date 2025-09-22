@@ -6,11 +6,9 @@ module.exports = {
 
   "addons": [
     "@storybook/addon-links",
-    "@storybook/addon-essentials",
     "@storybook/addon-a11y",
-    "@etchteam/storybook-addon-css-variables-theme",
-    "@storybook/addon-mdx-gfm",
-    "@chromatic-com/storybook"
+    "@chromatic-com/storybook",
+    "@storybook/addon-docs"
   ],
 
   "framework": {

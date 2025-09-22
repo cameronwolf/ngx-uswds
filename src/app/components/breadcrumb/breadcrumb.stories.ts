@@ -5,7 +5,7 @@ import {
   UsaBreadcrumbModule,
 } from "@gsa-sam/ngx-uswds";
 import { CommonModule } from "@angular/common";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 import { generateConfig } from "src/sandbox/sandbox-utils";
 import { BreadcrumbCustomTemplateModule } from "./breadcrumb-custom-template/breadcrumb-custom-template.module";
 

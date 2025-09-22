@@ -7,7 +7,7 @@ import {
 } from "@gsa-sam/ngx-uswds";
 import { CommonModule } from "@angular/common";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 import { FormsModule } from "@angular/forms";
 import { DatepickerBasicComponent } from "./datepicker-basic/datepicker-basic.component";
 import { DatepickerDisabledModule } from "./datepicker-disabled/datepicker-disabled.module";

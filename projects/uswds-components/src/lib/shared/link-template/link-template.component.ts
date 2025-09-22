@@ -3,8 +3,9 @@ import { UsaNavigationLink, UsaNavigationMode } from "../../util/navigation";
 
 
 @Component({
-  selector: `usa-link-template`,
-  templateUrl: './link-template.component.html'
+    selector: `usa-link-template`,
+    templateUrl: './link-template.component.html',
+    standalone: false
 })
 export class UsaLinkTemplateComponent {
 

@@ -7,17 +7,17 @@ import { UsaStepIndicatorModel } from './step-indicator.model';
 let stepIndicatorId = 0;
 
 @Component({
-  selector: 'usa-step-indicator',
-  templateUrl: './step-indicator.component.html',
-  host: {
-    'class': 'usa-step-indicator',
-    '[class.usa-step-indicator--no-labels]': 'hideLabels',
-    '[class.usa-step-indicator--center]': 'centerLabels && !hideLabels',
-    '[class.usa-step-indicator--counters]': 'displayCounters && !smallCounters',
-    '[class.usa-step-indicator--counters-sm]': 'smallCounters',
-
-  },
-  styleUrls: ['./step-indicator.component.scss'],
+    selector: 'usa-step-indicator',
+    templateUrl: './step-indicator.component.html',
+    host: {
+        'class': 'usa-step-indicator',
+        '[class.usa-step-indicator--no-labels]': 'hideLabels',
+        '[class.usa-step-indicator--center]': 'centerLabels && !hideLabels',
+        '[class.usa-step-indicator--counters]': 'displayCounters && !smallCounters',
+        '[class.usa-step-indicator--counters-sm]': 'smallCounters',
+    },
+    styleUrls: ['./step-indicator.component.scss'],
+    standalone: false
 })
 export class UsaStepIndicatorComponent implements OnChanges {
 

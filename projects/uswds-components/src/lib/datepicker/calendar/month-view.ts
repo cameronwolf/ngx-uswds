@@ -41,10 +41,11 @@ const DAYS_PER_WEEK = 7;
  * @docs-private
  */
 @Component({
-  selector: 'usa-month-view',
-  templateUrl: './month-view.html',
-  exportAs: 'usaMonthView',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'usa-month-view',
+    templateUrl: './month-view.html',
+    exportAs: 'usaMonthView',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UsaMonthView<D> implements AfterContentInit, OnChanges, OnDestroy {
   private _rerenderSubscription = Subscription.EMPTY;

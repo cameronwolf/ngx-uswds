@@ -27,11 +27,12 @@ import { UsaCalendarUserEvent, UsaCalendarBody, UsaCalendarCell, UsaCalendarCell
  * @docs-private
  */
 @Component({
-  selector: 'usa-year-view',
-  templateUrl: './year-view.html',
-  exportAs: 'usaYearView',
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'usa-year-view',
+    templateUrl: './year-view.html',
+    exportAs: 'usaYearView',
+    encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UsaYearView<D> implements AfterContentInit, OnDestroy {
   private _rerenderSubscription = Subscription.EMPTY;

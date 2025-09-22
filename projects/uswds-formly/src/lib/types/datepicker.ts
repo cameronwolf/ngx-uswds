@@ -3,14 +3,15 @@ import { UsaDatePickerWrapper } from '@gsa-sam/ngx-uswds';
 import { AbstractUswdsFormly } from '../uswds-formly';
 
 @Component({
-  template: `
+    template: `
   <usa-date-picker-wrapper>
   <input [formControl]="formControl" [usaDatePicker]="picker" [id]="props.id+ '_datePicker'">
   <usa-date-picker-button [for]="picker"></usa-date-picker-button>
   <usa-date-picker #picker></usa-date-picker>
 </usa-date-picker-wrapper>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class USWDSFormlyDatePickerComponent extends AbstractUswdsFormly {
   //@ViewChild(UsaDatePickerWrapper, { static: true }) public template: UsaDatePickerWrapper;

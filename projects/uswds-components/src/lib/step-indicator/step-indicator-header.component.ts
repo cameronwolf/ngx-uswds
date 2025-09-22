@@ -2,8 +2,8 @@ import { Component, Host, Input, TemplateRef } from "@angular/core";
 import { UsaStepIndicatorComponent } from "./step-indicator.component";
 
 @Component({
-  selector: `[UsaStepHeader]`,
-  template: `
+    selector: `[UsaStepHeader]`,
+    template: `
     <ng-container *ngIf="template; else default">
       <ng-template [ngTemplateOutlet]="template"></ng-template>
     </ng-container>
@@ -22,11 +22,12 @@ import { UsaStepIndicatorComponent } from "./step-indicator.component";
       }}</span>
     </ng-template>
   `,
-  host: {
-    class: 'usa-step-indicator__heading',
-    '[class.margin-top-0]': "stepIndicator.headerPosition === 'top'",
-    '[class.margin-bottom-4]': "stepIndicator.headerPosition === 'top'",
-  },
+    host: {
+        class: 'usa-step-indicator__heading',
+        '[class.margin-top-0]': "stepIndicator.headerPosition === 'top'",
+        '[class.margin-bottom-4]': "stepIndicator.headerPosition === 'top'",
+    },
+    standalone: false
 })
 export class UsaStepIndicatorHeaderComponent {
   @Input() template: TemplateRef<any>;

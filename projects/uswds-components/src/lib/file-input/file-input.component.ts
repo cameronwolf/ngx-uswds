@@ -18,15 +18,16 @@ export interface UploadedFile {
   file: File
 }
 @Component({
-  selector: 'usa-file-input',
-  templateUrl: './file-input.component.html',
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => UsaFileInputComponent),
-      multi: true,
-    },
-  ],
+    selector: 'usa-file-input',
+    templateUrl: './file-input.component.html',
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => UsaFileInputComponent),
+            multi: true,
+        },
+    ],
+    standalone: false
 })
 export class UsaFileInputComponent implements ControlValueAccessor {
 

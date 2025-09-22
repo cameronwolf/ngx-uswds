@@ -1,18 +1,19 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: '[uswds-card]',
-  template: `
+    selector: '[uswds-card]',
+    template: `
     <div class="usa-card__container">
       <ng-content></ng-content>
     </div>
   `,
-  host: {
-    'class': 'usa-card',
-    '[class.usa-card--header-first]': 'headerFirst',
-    '[class.usa-card--flag]': 'flagView',
-    '[class.usa-card--media-right]': 'flagMediaRight',
-  }
+    host: {
+        'class': 'usa-card',
+        '[class.usa-card--header-first]': 'headerFirst',
+        '[class.usa-card--flag]': 'flagView',
+        '[class.usa-card--media-right]': 'flagMediaRight',
+    },
+    standalone: false
 })
 export class USWDSCardComponent {
   @Input() flagView = false;

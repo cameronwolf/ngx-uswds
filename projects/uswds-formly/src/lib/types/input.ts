@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FieldType } from '@ngx-formly/core';
 
 @Component({
-  template: `
+    template: `
 
     <input
       [ngClass]="{
@@ -22,5 +22,6 @@ import { FieldType } from '@ngx-formly/core';
     />
 
   `,
+    standalone: false
 })
 export class USWDSFormlyInputComponent extends FieldType {}

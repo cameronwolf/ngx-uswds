@@ -115,13 +115,14 @@ fdescribe('HeaderComponent', () => {
 });
 
 @Component({
-  template: `
+    template: `
     <usa-header
       [extended]="extended"
       [primaryNavItems]="primaryNav"
       [secondaryNavItems]="secondaryNav"
     ></usa-header>
   `,
+    standalone: false
 })
 class MockHeaderComponent {
   public extended = false;

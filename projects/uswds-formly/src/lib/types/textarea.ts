@@ -6,7 +6,8 @@ import { AbstractUswdsFormly } from '../uswds-formly';
     template: `
   <usa-textarea [formControl]="formControl" [placeholder]="props.placeholder">{{ props.label }}</usa-textarea>
   `,
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class USWDSFormlyTextAreaComponent extends AbstractUswdsFormly {
    // @ViewChild(UsaTextareaComponent, { static: true }) public  template: UsaTextareaComponent;

@@ -4,16 +4,17 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 let dropdownId = 0;
 @Component({
-  selector: 'usa-dropdown',
-  templateUrl: './dropdown.component.html',
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => UsaDropdownComponent),
-      multi: true,
-    },
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'usa-dropdown',
+    templateUrl: './dropdown.component.html',
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => UsaDropdownComponent),
+            multi: true,
+        },
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UsaDropdownComponent implements ControlValueAccessor {
 

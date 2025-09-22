@@ -4,10 +4,11 @@ import { UntypedFormControl, ReactiveFormsModule } from '@angular/forms';
 import { UsaCharacterCountDirective } from './character-count.directive';
 
 @Component({
-  template: `
+    template: `
     <input [usaCharacterCount]="25" id="inputA">
     <input [usaCharacterCount]="25" [formControl]="formControl" id="inputB">
-  `
+  `,
+    standalone: false
 })
 class CharacterCountTestComponent {
   formControl = new UntypedFormControl();

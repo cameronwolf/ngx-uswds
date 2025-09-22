@@ -27,7 +27,8 @@ import { UsaSort } from './table-sort.component';
 import { UsaTableConfig } from './table.config';
 
 @Directive({
-  selector: `[usaColumnDef]`,
+    selector: `[usaColumnDef]`,
+    standalone: false
 })
 export class UsaColumnDef {
   @ContentChild(UsaTableHeaderDef) tableHeaderTemplate: UsaTableHeaderDef;
@@ -56,10 +57,11 @@ export class UsaColumnDef {
 }
 
 @Component({
-  selector: 'usa-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'usa-table',
+    templateUrl: './table.component.html',
+    styleUrls: ['./table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UsaTableComponent
   implements AfterContentInit, OnChanges, AfterContentChecked

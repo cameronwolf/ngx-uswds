@@ -2,26 +2,28 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Directive, Event
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 
 @Directive({
-  selector: '[usaRadioDescription]',
-  host: {
-    class: 'usa-checkbox__label-description'
-  }
+    selector: '[usaRadioDescription]',
+    host: {
+        class: 'usa-checkbox__label-description'
+    },
+    standalone: false
 })
 export class UsaRadioLabelDescription { }
 
 let nextId = 0;
 
 @Component({
-  selector: `usa-radio`,
-  templateUrl: `./radio.component.html`,
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => UsaRadioComponent),
-      multi: true,
-    },
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: `usa-radio`,
+    templateUrl: `./radio.component.html`,
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => UsaRadioComponent),
+            multi: true,
+        },
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UsaRadioComponent implements ControlValueAccessor{
 

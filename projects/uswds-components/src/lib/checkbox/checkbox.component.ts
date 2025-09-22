@@ -4,23 +4,25 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 let nextId = 0;
 
 @Directive({
-  selector: '[usaCheckboxDescription]',
-  host: {
-    class: 'usa-checkbox__label-description'
-  }
+    selector: '[usaCheckboxDescription]',
+    host: {
+        class: 'usa-checkbox__label-description'
+    },
+    standalone: false
 })
 export class UsaCheckboxLabelDescription {}
 @Component({
-  selector: 'usa-checkbox',
-  templateUrl: './checkbox.component.html',
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => UsaCheckboxComponent),
-      multi: true,
-    },
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'usa-checkbox',
+    templateUrl: './checkbox.component.html',
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => UsaCheckboxComponent),
+            multi: true,
+        },
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UsaCheckboxComponent implements ControlValueAccessor {
 

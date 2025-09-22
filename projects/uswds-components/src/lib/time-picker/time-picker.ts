@@ -4,8 +4,9 @@ import { UsaComboBoxComponent } from "../combo-box/combo-box.component";
 
 
 @Directive({
-  selector: '[usa-time-picker]',
-  exportAs: 'usaTimePicker'
+    selector: '[usa-time-picker]',
+    exportAs: 'usaTimePicker',
+    standalone: false
 })
 export class UsaTimePicker implements OnInit, OnChanges, OnDestroy {
 

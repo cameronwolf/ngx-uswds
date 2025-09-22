@@ -42,10 +42,11 @@ let uniqueId = 0;
 
 /** Default header for MatCalendar */
 @Component({
-  selector: 'usa-calendar-header',
-  templateUrl: './calendar-header.html',
-  exportAs: 'usaCalendarHeader',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'usa-calendar-header',
+    templateUrl: './calendar-header.html',
+    exportAs: 'usaCalendarHeader',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UsaCalendarHeader<D> {
   _buttonDescriptionId = `mat-calendar-button-${uniqueId++}`;
@@ -145,11 +146,12 @@ export class UsaCalendarHeader<D> {
 
 /** A calendar that is used as part of the datePicker. */
 @Component({
-  selector: 'usa-calendar',
-  templateUrl: 'calendar.html',
-  exportAs: 'usaCalendar',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [USA_SINGLE_DATE_SELECTION_MODEL_PROVIDER]
+    selector: 'usa-calendar',
+    templateUrl: 'calendar.html',
+    exportAs: 'usaCalendar',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [USA_SINGLE_DATE_SELECTION_MODEL_PROVIDER],
+    standalone: false
 })
 export class UsaCalendar<D> implements AfterContentInit, AfterViewChecked, OnDestroy, OnChanges {
   /** An input indicating the type of the header component, if set. */

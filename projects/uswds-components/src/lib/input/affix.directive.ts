@@ -1,7 +1,8 @@
 import { AfterViewInit, Directive, ElementRef, Input, Renderer2, TemplateRef, ViewContainerRef } from '@angular/core';
 
 @Directive({
-  selector: 'input[prefix], input[suffix]'
+    selector: 'input[prefix], input[suffix]',
+    standalone: false
 })
 export class UsaInputAffixDirective implements AfterViewInit {
 

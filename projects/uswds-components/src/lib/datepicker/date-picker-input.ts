@@ -22,24 +22,25 @@ export const USA_DATEPICKER_VALIDATORS: any = {
 };
 
 @Directive({
-  selector: 'input[usaDatePicker]',
-  providers: [
-    USA_DATEPICKER_VALUE_ACCESSOR,
-    USA_DATEPICKER_VALIDATORS,
-  ],
-  host: {
-    'class': 'usa-input',
-    '[attr.aria-haspopup]': '_datePicker ? "dialog" : null',
-    '[attr.aria-owns]': '(_datePicker?.opened && _datePicker.id) || null',
-    '[attr.min]': 'min ? _dateAdapter.toIso8601(min) : null',
-    '[attr.max]': 'max ? _dateAdapter.toIso8601(max) : null',
-    '[disabled]': 'disabled',
-    '(input)': '_onInput($event.target.value)',
-    '(change)': '_onChange()',
-    '(blur)': '_onBlur()',
-    '(keydown)': '_onKeydown($event)',
-  },
-  exportAs: 'usaDatePickerInput',
+    selector: 'input[usaDatePicker]',
+    providers: [
+        USA_DATEPICKER_VALUE_ACCESSOR,
+        USA_DATEPICKER_VALIDATORS,
+    ],
+    host: {
+        'class': 'usa-input',
+        '[attr.aria-haspopup]': '_datePicker ? "dialog" : null',
+        '[attr.aria-owns]': '(_datePicker?.opened && _datePicker.id) || null',
+        '[attr.min]': 'min ? _dateAdapter.toIso8601(min) : null',
+        '[attr.max]': 'max ? _dateAdapter.toIso8601(max) : null',
+        '[disabled]': 'disabled',
+        '(input)': '_onInput($event.target.value)',
+        '(change)': '_onChange()',
+        '(blur)': '_onBlur()',
+        '(keydown)': '_onKeydown($event)',
+    },
+    exportAs: 'usaDatePickerInput',
+    standalone: false
 })
 export class UsaDatePickerInput<D> extends UsaDatePickerInputBase<D | null, D>
   implements UsaDatePickerControl<D | null>, OnDestroy {

@@ -6,7 +6,7 @@ import { UsaRadioGroupComponent } from "./radio-group.component";
 import { UsaRadioModule } from "./radio.module";
 
 @Component({
-  template: `
+    template: `
   <!-- Basic Radio Input -->
   <usa-radio-group #radioGroupA name="historical-figures" (change)="onRadioChange($event)" [ariaLabelledBy]="'historicalFigures1Label'">
     <h4 id="historicalFigures1Label" usaRadioGroupLabel>Historical Figures</h4>
@@ -24,7 +24,8 @@ import { UsaRadioModule } from "./radio.module";
     <usa-radio [id]="'historical-washington-2'" value="booker-t-washington" >Booker T. Washington</usa-radio>
     <usa-radio [disabled]="true" [id]="'historical-carver-2'" value="george-washington-carver">George Washington Carver</usa-radio>
   </usa-radio-group>
-  `
+  `,
+    standalone: false
 })
 class RadioTestComponent {
   @ViewChild('radioGroupA') radioGroupA: UsaRadioGroupComponent;

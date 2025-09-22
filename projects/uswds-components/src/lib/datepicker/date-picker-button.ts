@@ -20,26 +20,28 @@ import { UsaDatePickerControl, UsaDatePickerPanel } from './date-picker-base';
 
 /** Can be used to override the icon of a `usaDatePickerButton`. */
 @Directive({
-  selector: '[usaDatePickerButtonIcon]'
+    selector: '[usaDatePickerButtonIcon]',
+    standalone: false
 })
 export class UsaDatePickerButtonIcon { }
 
 
 @Component({
-  selector: 'usa-date-picker-button',
-  templateUrl: './date-picker-button.html',
-  host: {
-    'class': 'usa-date-picker__button',
-    '[attr.tabindex]': 'null',
-    // Used by the test harness to tie this toggle to its datePicker.
-    '[attr.data-usa-calendar]': 'datePicker ? datePicker.id : null',
-    // Bind the `click` on the host, rather than the inner `button`, so that we can call
-    // `stopPropagation` on it without affecting the user's `click` handlers. We need to stop
-    // it so that the input doesn't get focused automatically by the form field (See #21836).
-    '(click)': '_toggle($event)',
-  },
-  exportAs: 'usaDatePickerButton',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'usa-date-picker-button',
+    templateUrl: './date-picker-button.html',
+    host: {
+        'class': 'usa-date-picker__button',
+        '[attr.tabindex]': 'null',
+        // Used by the test harness to tie this toggle to its datePicker.
+        '[attr.data-usa-calendar]': 'datePicker ? datePicker.id : null',
+        // Bind the `click` on the host, rather than the inner `button`, so that we can call
+        // `stopPropagation` on it without affecting the user's `click` handlers. We need to stop
+        // it so that the input doesn't get focused automatically by the form field (See #21836).
+        '(click)': '_toggle($event)',
+    },
+    exportAs: 'usaDatePickerButton',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UsaDatePickerButton<D> implements AfterContentInit, OnChanges, OnDestroy {
   private _stateChanges = Subscription.EMPTY;

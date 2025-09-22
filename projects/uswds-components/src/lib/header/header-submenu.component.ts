@@ -6,21 +6,22 @@ import {
 let submenuId = 0;
 
 @Component({
-  selector: `button[usaHeaderSubmenu]`,
-  host: {
-    class: `usa-accordion__button usa-nav__link`,
-    '[attr.aria-expanded]': 'selected',
-    '[attr.aria-controls]': 'id', 
-    '(click)': 'onClick()',
-  },
-  template: `
+    selector: `button[usaHeaderSubmenu]`,
+    host: {
+        class: `usa-accordion__button usa-nav__link`,
+        '[attr.aria-expanded]': 'selected',
+        '[attr.aria-controls]': 'id',
+        '(click)': 'onClick()',
+    },
+    template: `
     <span><ng-content></ng-content></span>
     <ng-template #submenuView>
       <div class="usa-nav__submenu" [ngClass]="{'usa-megamenu': isMegamenu}">
         <ng-container [ngTemplateOutlet]="content"></ng-container>
       </div>
     </ng-template>
-  `
+  `,
+    standalone: false
 })
 export class UsaHeaderSubmenuButton {
   @ViewChild('submenuView') submenuTemplate: TemplateRef<any>;

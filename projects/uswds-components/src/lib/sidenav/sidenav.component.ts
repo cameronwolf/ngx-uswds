@@ -3,8 +3,9 @@ import { UsaNavigationMode } from '../util/navigation';
 import { SidenavModel } from './sidenav.model';
 
 @Component({
-  selector: `usa-sidenav`,
-  templateUrl: `sidenav.component.html`,
+    selector: `usa-sidenav`,
+    templateUrl: `sidenav.component.html`,
+    standalone: false
 })
 export class UsaSidenavComponent implements OnInit {
   NavigationMode = UsaNavigationMode;

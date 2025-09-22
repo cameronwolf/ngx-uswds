@@ -25,22 +25,22 @@ import { AnimationEvent } from '@angular/animations';
 
 let nextId = 0;
 @Component({
-  selector: 'usa-modal-window',
-  animations: [usaDialogAnimations.dialogContainer],
-  host: {
-    '[class]': '"usa-modal" + (modalDialogClass ? " " + modalDialogClass : "")',
-    '[class.usa-modal--lg]': 'size === \'lg\'',
-    'role': 'dialog',
-    'tabindex': '-1',
-    '[attr.id]': 'id',
-    '[attr.aria-modal]': 'true',
-    '[attr.aria-labelledby]': 'ariaLabelledBy',
-    '[attr.aria-describedby]': 'ariaDescribedBy',
-    '[@.disabled]': '!animation',
-    '[@dialogContainer]': '_state',
-    '(@dialogContainer.done)': '_onAnimationDone($event)',
-  },
-  template: `
+    selector: 'usa-modal-window',
+    animations: [usaDialogAnimations.dialogContainer],
+    host: {
+        '[class]': '"usa-modal" + (modalDialogClass ? " " + modalDialogClass : "")',
+        '[class.usa-modal--lg]': 'size === \'lg\'',
+        'role': 'dialog',
+        'tabindex': '-1',
+        '[attr.id]': 'id',
+        '[attr.aria-modal]': 'true',
+        '[attr.aria-labelledby]': 'ariaLabelledBy',
+        '[attr.aria-describedby]': 'ariaDescribedBy',
+        '[@.disabled]': '!animation',
+        '[@dialogContainer]': '_state',
+        '(@dialogContainer.done)': '_onAnimationDone($event)',
+    },
+    template: `
     <div #dialog class="usa-modal__content">
       <div class="usa-modal__main">
         <ng-content></ng-content>
@@ -54,7 +54,8 @@ let nextId = 0;
       </button>
     </div>
     `,
-  encapsulation: ViewEncapsulation.None,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class UsaModalWindow implements OnInit,
     AfterViewInit, OnDestroy {

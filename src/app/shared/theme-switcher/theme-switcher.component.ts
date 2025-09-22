@@ -2,13 +2,14 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from "@angular/core";
 import { ThemeSwitcherService } from "./theme-switcher.service";
 
 @Component({
-  selector: `usa-theme-switcher`,
-  template: `
+    selector: `usa-theme-switcher`,
+    template: `
     <select #select class="usa-select" aria-label="Application Theme Switcher">
       <option value="uswds">USWDS Styles</option>
       <option value="samStyles">Sam Styles</option>
     </select>
-  `
+  `,
+    standalone: false
 })
 export class ThemeSwitcherComponent implements AfterViewInit {
   @ViewChild('select') themeSelector: ElementRef<HTMLSelectElement>;

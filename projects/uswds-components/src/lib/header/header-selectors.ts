@@ -15,10 +15,11 @@ import { Directive, TemplateRef } from "@angular/core";
  * 
  */
 @Directive({
-  selector: `ul[usaHeaderPrimaryLinks]`,
-  host: {
-    class: 'usa-nav__primary usa-accordion',
-  }
+    selector: `ul[usaHeaderPrimaryLinks]`,
+    host: {
+        class: 'usa-nav__primary usa-accordion',
+    },
+    standalone: false
 })
 export class UsaHeaderPrimaryLinks {}
 
@@ -33,7 +34,8 @@ export class UsaHeaderPrimaryLinks {}
  * </usa-header>
  */
 @Directive({
-  selector: `[usaHeaderPrimaryExtra]`,
+    selector: `[usaHeaderPrimaryExtra]`,
+    standalone: false
 })
 export class UsaHeaderPrimaryExtra {}
 
@@ -50,7 +52,8 @@ export class UsaHeaderPrimaryExtra {}
  * </usa-header>
  */
 @Directive({
-  selector: `[usaHeaderPrimaryLinkTemplate]`
+    selector: `[usaHeaderPrimaryLinkTemplate]`,
+    standalone: false
 })
 export class UsaHeaderPrimaryLinkTemplate {
   constructor (public templateRef: TemplateRef<any>) {}
@@ -70,10 +73,11 @@ export class UsaHeaderPrimaryLinkTemplate {
  * </usa-header>
  */
 @Directive({
-  selector: `ul[usaHeaderSecondaryLinks]`,
-  host: {
-    class: 'usa-nav__secondary-links',
-  }
+    selector: `ul[usaHeaderSecondaryLinks]`,
+    host: {
+        class: 'usa-nav__secondary-links',
+    },
+    standalone: false
 })
 export class UsaHeaderSecondaryLinks {}
 
@@ -88,7 +92,8 @@ export class UsaHeaderSecondaryLinks {}
  * </usa-header>
  */
 @Directive({
-  selector: `[usaHeaderSecondaryExtra]`
+    selector: `[usaHeaderSecondaryExtra]`,
+    standalone: false
 })
 export class UsaHeaderSecondaryExtra {}
 
@@ -106,7 +111,8 @@ export class UsaHeaderSecondaryExtra {}
  * </usa-header>
  */
 @Directive({
-  selector: `[usaHeaderSecondaryLinkTemplate]`
+    selector: `[usaHeaderSecondaryLinkTemplate]`,
+    standalone: false
 })
 export class UsaHeaderSecondaryLinkTemplate {
   constructor(public templateRef: TemplateRef<any>) {}

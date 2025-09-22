@@ -2,7 +2,8 @@
 import { ChangeDetectorRef, Directive, ElementRef, Input, OnChanges, TemplateRef } from "@angular/core";
 
 @Directive({
-  selector: `[usaTableDataDef]`,
+    selector: `[usaTableDataDef]`,
+    standalone: false
 })
 export class UsaTableDataDef {
   constructor(
@@ -12,10 +13,11 @@ export class UsaTableDataDef {
 
 
 @Directive({
-  selector: `[usa-table-data]`,
-  host: {
-    '[attr.data-sort-active]': '_isSortActive ? _isSortActive : undefined',
-  }
+    selector: `[usa-table-data]`,
+    host: {
+        '[attr.data-sort-active]': '_isSortActive ? _isSortActive : undefined',
+    },
+    standalone: false
 })
 export class UsaTableData {
   _isSortActive = false;
@@ -37,7 +39,8 @@ export class UsaTableData {
  * Represents one row of table data
  */
 @Directive({
-  selector: `[usaDataRowDef]`,
+    selector: `[usaDataRowDef]`,
+    standalone: false
 })
 export class UsaDataRowDef implements OnChanges {
 

@@ -13,8 +13,9 @@ import { Key } from '../util/key';
 let nextId = 0;
 
 @Component({
-  selector: 'usa-textarea',
-  templateUrl: './textarea.component.html',
+    selector: 'usa-textarea',
+    templateUrl: './textarea.component.html',
+    standalone: false
 })
 export class UsaTextareaComponent implements ControlValueAccessor {
   model: string = '';

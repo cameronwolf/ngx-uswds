@@ -3,10 +3,11 @@ import { UsaDropdownComponent } from '@gsa-sam/ngx-uswds';
 import { AbstractUswdsFormly } from '../uswds-formly';
 
 @Component({
-  template: `
+    template: `
   <usa-dropdown [formControl]="formControl" [options]="props.options">{{ props.label }}</usa-dropdown>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class USWDSFormlyDropdownComponent extends AbstractUswdsFormly {
   //@ViewChild(UsaDropdownComponent, { static: true }) public template: UsaDropdownComponent;

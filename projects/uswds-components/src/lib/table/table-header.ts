@@ -7,7 +7,8 @@ import { UsaSort } from "./table-sort.component";
  * from user
  */
 @Directive({
-  selector: `[usaTableHeaderDef]`,
+    selector: `[usaTableHeaderDef]`,
+    standalone: false
 })
 export class UsaTableHeaderDef {
 
@@ -20,14 +21,15 @@ export class UsaTableHeaderDef {
  * Directive to apply certain styles and/or attribute to table header
  */
 @Directive({
-  selector: `[usa-table-header]`,
-  host: {
-    '[attr.role]': '\'columnheader\'',
-    '[attr.scope]': '\'col\'',
-    '[attr.data-sortable]': 'usaSort ? true : undefined',
-    '[attr.aria-sort]': 'ariaSort ? ariaSort : undefined',
-    '[attr.aria-label]': 'ariaLabel'
-  }
+    selector: `[usa-table-header]`,
+    host: {
+        '[attr.role]': '\'columnheader\'',
+        '[attr.scope]': '\'col\'',
+        '[attr.data-sortable]': 'usaSort ? true : undefined',
+        '[attr.aria-sort]': 'ariaSort ? ariaSort : undefined',
+        '[attr.aria-label]': 'ariaLabel'
+    },
+    standalone: false
 })
 export class UsaTableHeader implements AfterViewInit{
   @ContentChild(UsaSort) usaSort: UsaSort;
@@ -85,7 +87,8 @@ export class UsaTableHeader implements AfterViewInit{
  * table headers can exist in one table
  */
 @Directive({
-  selector: `[usaHeaderRowDef]`,
+    selector: `[usaHeaderRowDef]`,
+    standalone: false
 })
 export class UsaHeaderRowDef {
   

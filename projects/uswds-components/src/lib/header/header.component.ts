@@ -19,9 +19,10 @@ import {
 import { UsaHeaderPrimaryLink } from './header.model';
 import { UsaNavigationLink, UsaNavigationMode } from '../util/navigation';
 @Component({
-  selector: 'usa-header',
-  templateUrl: './header.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'usa-header',
+    templateUrl: './header.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UsaHeaderComponent implements OnInit {
   @ContentChild(UsaHeaderPrimaryLinkTemplate)

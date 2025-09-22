@@ -7,7 +7,8 @@ import {
 } from '@angular/core';
 
 @Directive({
-  selector: 'tr[usaHighlightOnHover]',
+    selector: 'tr[usaHighlightOnHover]',
+    standalone: false
 })
 export class HighlightOnHoverDirective {
   private readonly hoverClass = 'usa-table__row--hovered';

@@ -28,10 +28,11 @@ export const yearsPerRow = 4;
  * @docs-private
  */
 @Component({
-  selector: 'usa-multi-year-view',
-  templateUrl: './multi-year-view.html',
-  exportAs: 'usaMultiYearView',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'usa-multi-year-view',
+    templateUrl: './multi-year-view.html',
+    exportAs: 'usaMultiYearView',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UsaMultiYearView<D> implements AfterContentInit, OnDestroy {
   private _rerenderSubscription = Subscription.EMPTY;

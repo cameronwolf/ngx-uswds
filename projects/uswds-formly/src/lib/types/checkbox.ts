@@ -3,10 +3,11 @@ import { UsaCheckboxComponent } from '@gsa-sam/ngx-uswds';
 import { AbstractUswdsFormly } from '../uswds-formly';
 
 @Component({
-  template: `
+    template: `
   <usa-checkbox [formControl]="formControl">{{ to.label }}</usa-checkbox>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class USWDSFormlyCheckboxComponent extends AbstractUswdsFormly {
   //@ViewChild(UsaCheckboxComponent, { static: true })  template: UsaCheckboxComponent;

@@ -6,14 +6,15 @@ import { Key, KeyCode, MicrosfotKeys } from '../util/key';
 let comboBoxId = 0;
 let listBoxId = 0;
 @Component({
-  selector: 'usa-combobox',
-  templateUrl: './combo-box.component.html',
-  providers: [{       
-    provide: NG_VALUE_ACCESSOR, 
-    useExisting: forwardRef(() => UsaComboBoxComponent),
-    multi: true     
-  }],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'usa-combobox',
+    templateUrl: './combo-box.component.html',
+    providers: [{
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => UsaComboBoxComponent),
+            multi: true
+        }],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UsaComboBoxComponent implements ControlValueAccessor {
 

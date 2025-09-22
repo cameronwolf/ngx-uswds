@@ -101,16 +101,17 @@ export interface UsaDatePickerPanel<
  * @docs-private
  */
 @Component({
-  selector: 'usa-date-picker-content',
-  templateUrl: './date-picker-content.html',
-  host: {
-    class: 'usa-date-picker__calendar',
-    '[attr.role]': 'dialog',
-    '[attr.aria-modal]': 'true',
-    '[attr.tabindex]': '-1',
-  },
-  exportAs: 'usaDatePickerContent',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'usa-date-picker-content',
+    templateUrl: './date-picker-content.html',
+    host: {
+        class: 'usa-date-picker__calendar',
+        '[attr.role]': 'dialog',
+        '[attr.aria-modal]': 'true',
+        '[attr.tabindex]': '-1',
+    },
+    exportAs: 'usaDatePickerContent',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UsaDatePickerContent<S, D = ExtractDateTypeFromSelection<S>>
   implements OnInit, AfterViewInit, OnDestroy

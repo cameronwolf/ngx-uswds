@@ -3,7 +3,8 @@ import { Directive, ElementRef, EventEmitter, Input, OnInit, Output } from "@ang
 import { Observable } from "rxjs";
 
 @Directive({
-  selector: `[usaFilePreview]`
+    selector: `[usaFilePreview]`,
+    standalone: false
 })
 export class UsaFilePreviewDirective implements OnInit {
 

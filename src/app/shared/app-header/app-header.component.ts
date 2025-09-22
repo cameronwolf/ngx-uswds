@@ -4,8 +4,9 @@ import { UsaHeaderComponent, UsaHeaderPrimaryLink } from "@gsa-sam/ngx-uswds";
 
 
 @Component({
-  selector: `usa-app-header`,
-  templateUrl: './app-header.component.html',
+    selector: `usa-app-header`,
+    templateUrl: './app-header.component.html',
+    standalone: false
 })
 export class UsaAppHeaderComponent implements OnInit {
 

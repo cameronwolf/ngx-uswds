@@ -3,7 +3,8 @@ import { Directive, HostListener, ElementRef, Input, NgModule } from '@angular/c
 
 /** For internal use - directive that adds or removes class based on hover */
 @Directive({
-  selector: '[hover-class]'
+    selector: '[hover-class]',
+    standalone: false
 })
 export class HoverClassDirective {
 

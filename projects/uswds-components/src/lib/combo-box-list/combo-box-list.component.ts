@@ -29,16 +29,18 @@ import {
 import { DOCUMENT } from '@angular/common';
 
 @Directive({
-  selector: `[usa-combo-box-item-template]`,
+    selector: `[usa-combo-box-item-template]`,
+    standalone: false
 })
 export class UsaComboBoxItemTemplate {
   constructor(public templateRef: TemplateRef<any>) {}
 }
 
 @Component({
-  selector: `usa-combo-box-list`,
-  templateUrl: './combo-box-list.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: `usa-combo-box-list`,
+    templateUrl: './combo-box-list.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UsaComboboxList implements AfterViewInit, OnDestroy, OnChanges {
   @ViewChild('dropdownListbox') dropdownListBox: ElementRef<HTMLUListElement>;

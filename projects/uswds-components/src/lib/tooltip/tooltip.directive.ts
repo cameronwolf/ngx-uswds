@@ -7,14 +7,15 @@ import {
 } from '@angular/core';
 
 @Directive({
-  selector: '[usaTooltip]',
-  host: {
-    class: 'usa-tooltip__trigger',
-    '(mouseenter)': 'show()',
-    '(focus)': 'show()',
-    '(mouseleave)': 'hide()',
-    '(blur)': 'hide()',
-  },
+    selector: '[usaTooltip]',
+    host: {
+        class: 'usa-tooltip__trigger',
+        '(mouseenter)': 'show()',
+        '(focus)': 'show()',
+        '(mouseleave)': 'hide()',
+        '(blur)': 'hide()',
+    },
+    standalone: false
 })
 export class UsaTooltipDirective implements AfterViewInit {
   // Span which contains the tooltip text

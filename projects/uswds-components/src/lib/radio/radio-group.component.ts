@@ -7,25 +7,27 @@ import { UsaRadioComponent } from "./radio.component";
  * Directive to allow heading for group of radio options
  */
 @Directive({
-  selector: '[usaRadioGroupLabel]',
+    selector: '[usaRadioGroupLabel]',
+    standalone: false
 })
 export class UsaRadioGroupLabel {}
 
 @Component({
-  selector: `usa-radio-group`,
-  template: `
+    selector: `usa-radio-group`,
+    template: `
   <div role="radiogroup" [attr.aria-labelledby]="ariaLabelledBy">
     <ng-content select="usaRadioGroupLabel"></ng-content>
     <ng-content></ng-content>
   </div>`,
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => UsaRadioGroupComponent),
-      multi: true,
-    },
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => UsaRadioGroupComponent),
+            multi: true,
+        },
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UsaRadioGroupComponent implements AfterContentInit, OnDestroy, ControlValueAccessor {
 

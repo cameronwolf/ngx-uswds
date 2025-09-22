@@ -23,18 +23,20 @@ import { UsaNavigationLink } from '../util/navigation';
  * </usa-breadcrumbs>
  */
 @Directive({
-  selector: `[usaBreadcrumbLinkTemplate]`,
+    selector: `[usaBreadcrumbLinkTemplate]`,
+    standalone: false
 })
 export class UsaBreadcrumbLinkTemplate {
   constructor(public templateRef: TemplateRef<any>) {}
 }
 
 @Component({
-  selector: 'usa-breadcrumb',
-  templateUrl: './breadcrumb.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrls: ['./breadcrumb.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+    selector: 'usa-breadcrumb',
+    templateUrl: './breadcrumb.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrls: ['./breadcrumb.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class UsaBreadcrumbComponent implements OnInit, OnChanges {
   @ContentChild(UsaBreadcrumbLinkTemplate)

@@ -44,10 +44,11 @@ export interface UsaCalendarUserEvent<D> {
  * @docs-private
  */
 @Component({
-  selector: '[usa-calendar-body]',
-  templateUrl: './calendar-body.html',
-  exportAs: 'usaCalendarBody',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: '[usa-calendar-body]',
+    templateUrl: './calendar-body.html',
+    exportAs: 'usaCalendarBody',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UsaCalendarBody implements OnChanges, OnDestroy {
   /**

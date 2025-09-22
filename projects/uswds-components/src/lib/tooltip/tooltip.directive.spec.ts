@@ -4,7 +4,8 @@ import { By } from '@angular/platform-browser';
 import { UsaTooltipDirective } from './tooltip.directive';
 
 @Component({
-  template: `<div><button [usaTooltip] title="test">Test</button></div>`
+    template: `<div><button [usaTooltip] title="test">Test</button></div>`,
+    standalone: false
 })
 class TestTooltipComponent {
   @ViewChild(UsaTooltipDirective) directive: UsaTooltipDirective;

@@ -20,13 +20,14 @@ import { AnimationEvent } from '@angular/animations';
 import { UsaExpansionAnimations } from './accordion-animations';
 
 @Component({
-  selector: 'usa-accordion',
-  exportAs: 'usaAccordion',
-  templateUrl: './accordion.component.html',
-  animations: [UsaExpansionAnimations.bodyExpansion],
-  host: {
-    class: 'display-block',
-  },
+    selector: 'usa-accordion',
+    exportAs: 'usaAccordion',
+    templateUrl: './accordion.component.html',
+    animations: [UsaExpansionAnimations.bodyExpansion],
+    host: {
+        class: 'display-block',
+    },
+    standalone: false
 })
 export class UsaAccordionComponent implements AfterContentChecked {
   @ContentChildren(UsaAccordionItem) panels: QueryList<UsaAccordionItem>;
@@ -302,19 +303,19 @@ export class UsaAccordionComponent implements AfterContentChecked {
 }
 
 @Directive({
-  selector: 'button[UsaAccordionToggle]',
-  host: {
-    type: 'button',
-    '[disabled]': 'panel.disabled',
-    class: 'usa-accordion__button',
-    '[class.collapsed]': '!panel.expanded',
-    '[attr.aria-expanded]': 'panel.expanded',
-    '[attr.aria-controls]': 'panel.expanded ? panel.id : undefined',
-    '[attr.aria-disabled]':
-      'panel.disabled && panel.expanded ? true : undefined',
-    '[attr.aria-label]': 'panel.ariaLabel',
-    '(click)': 'accordion.toggle(panel.id)',
-  },
+    selector: 'button[UsaAccordionToggle]',
+    host: {
+        type: 'button',
+        '[disabled]': 'panel.disabled',
+        class: 'usa-accordion__button',
+        '[class.collapsed]': '!panel.expanded',
+        '[attr.aria-expanded]': 'panel.expanded',
+        '[attr.aria-controls]': 'panel.expanded ? panel.id : undefined',
+        '[attr.aria-disabled]': 'panel.disabled && panel.expanded ? true : undefined',
+        '[attr.aria-label]': 'panel.ariaLabel',
+        '(click)': 'accordion.toggle(panel.id)',
+    },
+    standalone: false
 })
 export class UsaAccordionToggle {
   static ngAcceptInputType_UsaAccordionToggle: UsaAccordionItem | '';

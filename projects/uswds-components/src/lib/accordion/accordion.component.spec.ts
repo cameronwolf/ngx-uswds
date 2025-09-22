@@ -88,7 +88,10 @@ describe('Accordion Component', () => {
   });
 })
 
-@Component({selector: 'test-cmp', template: ''})
+@Component({
+    selector: 'test-cmp', template: '',
+    standalone: false
+})
 class TestComponent {
   activeIds: string | string[] = [];
   singleSelect = true;

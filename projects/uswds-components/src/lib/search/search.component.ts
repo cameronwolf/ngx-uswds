@@ -5,16 +5,17 @@ import { Key } from '../util/key';
 let nextId = 0;
 
 @Component({
-  selector: 'usa-search',
-  templateUrl: './search.component.html',
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => UsaSearchComponent),
-      multi: true,
-    },
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'usa-search',
+    templateUrl: './search.component.html',
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => UsaSearchComponent),
+            multi: true,
+        },
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class UsaSearchComponent {
 

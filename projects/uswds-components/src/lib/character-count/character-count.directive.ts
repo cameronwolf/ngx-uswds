@@ -6,7 +6,8 @@ declare var ResizeObserver;
 
 let nextId = 0;
 @Directive({
-  selector: '[usaCharacterCount]',
+    selector: '[usaCharacterCount]',
+    standalone: false
 })
 export class UsaCharacterCountDirective implements OnInit, OnDestroy {
 

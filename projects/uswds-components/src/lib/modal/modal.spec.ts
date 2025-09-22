@@ -91,7 +91,7 @@ describe('UsaModal', () => {
 });
 
 @Component({
-  template: `
+    template: `
     <ng-template #content let-modal>
       <h2 class="usa-modal__heading" id="modal-test">
         Test Modal
@@ -102,7 +102,8 @@ describe('UsaModal', () => {
     </ng-template>
     <button class="usa-button" id="modal-test-open" (click)="open(content)">Launch Default modal</button>
     <hr>
-  `
+  `,
+    standalone: false
 })
 class UsaModalTestComponent {
   closeResult: ModalDismissReasons;

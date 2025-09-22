@@ -3,12 +3,13 @@ import { UsaSearchComponent } from '@gsa-sam/ngx-uswds';
 import { AbstractUswdsFormly } from '../uswds-formly';
 
 @Component({
-  template: `
+    template: `
   <usa-search
       [formControl]="formControl"
     ></usa-search>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class USWDSFormlySearchComponent extends AbstractUswdsFormly {
  // @ViewChild(UsaSearchComponent, { static: true }) public template: UsaSearchComponent;

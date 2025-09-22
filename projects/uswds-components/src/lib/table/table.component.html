@@ -1,5 +1,5 @@
 <div [ngClass]="{'usa-table-container--scrollable': scrollable}">
-  <table role="table" class="usa-table" 
+  <table role="table" class="usa-table"
     [ngClass]="{
       'usa-table--borderless': borderless, 
       'usa-table--striped': striped, 
@@ -9,12 +9,16 @@
     }">
     <ng-content select="caption"></ng-content>
     <thead>
-      <ng-container *ngFor="let headerRowDef of _headerRowDefs"
+      @for (headerRowDef of _headerRowDefs; track headerRowDef) {
+        <ng-container
         [ngTemplateOutlet]="headerTmpl" [ngTemplateOutletContext]="{tableHeaders: headerRowDef.usaHeaderRowDef}"></ng-container>
+      }
     </thead>
     <tbody>
-      <ng-container *ngFor="let data of displayedData; index as i; trackBy: trackBy ? trackBy : undefined" 
+      @for (data of displayedData; track trackBy ? trackBy : undefined(i, data); let i = $index) {
+        <ng-container
         [ngTemplateOutlet]="dataTmpl" [ngTemplateOutletContext]="{data: data, index: i}"> </ng-container>
+      }
     </tbody>
   </table>
 </div>
@@ -27,9 +31,9 @@
 <!-- Table Header Template-->
 <ng-template #headerTmpl let-tableHeaders="tableHeaders">
   <tr>
-    <ng-container *ngFor="let header of tableHeaders">
+    @for (header of tableHeaders; track header) {
       <ng-container [ngTemplateOutlet]="_columnHeaderMap?.get(header)?.tableHeaderTemplate?.templateRef"></ng-container>
-    </ng-container>
+    }
   </tr>
 </ng-template>
 
@@ -37,15 +41,18 @@
 <!-- Table Data Template -->
 <ng-template #dataTmpl let-data="data" let-index="index" >
   <tr [usaHighlightOnHover]="highlightRowOnHover" (click)="rowClicked.emit(data)">
-    <th *ngIf="data.rowHeader" scope="row">{{data.rowHeader}}</th>
-    <ng-container 
-      *ngFor="let header of _tableDataDefs.usaDataRowDefColumns"
-      [ngTemplateOutlet]="_columnDataMap.get(header)"
+    @if (data.rowHeader) {
+      <th scope="row">{{data.rowHeader}}</th>
+    }
+    @for (header of _tableDataDefs.usaDataRowDefColumns; track header) {
+      <ng-container
+        [ngTemplateOutlet]="_columnDataMap.get(header)"
       [ngTemplateOutletContext]="{
         $implicit: data, 
         index: index
       }">
-    </ng-container>
+      </ng-container>
+    }
   </tr>
 </ng-template>
 

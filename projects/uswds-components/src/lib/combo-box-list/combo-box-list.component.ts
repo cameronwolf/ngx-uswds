@@ -15,6 +15,7 @@ import {
   SimpleChanges,
   TemplateRef,
   ViewChild,
+  DOCUMENT
 } from '@angular/core';
 import {
   isArrowDown,
@@ -26,7 +27,7 @@ import {
   isPageUp,
   isTab,
 } from '../util/key';
-import { DOCUMENT } from '@angular/common';
+
 
 @Directive({
     selector: `[usa-combo-box-item-template]`,

@@ -1,4 +1,4 @@
-import { DOCUMENT } from '@angular/common';
+
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
@@ -23,6 +23,7 @@ import {
   SimpleChanges,
   ViewChild,
   ViewContainerRef,
+  DOCUMENT
 } from '@angular/core';
 import { Observable, Subject, Subscription } from 'rxjs';
 import { BooleanInput, coerceBooleanProperty } from '../util/boolean-property';

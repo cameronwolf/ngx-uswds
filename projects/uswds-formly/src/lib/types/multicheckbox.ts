@@ -11,15 +11,19 @@ import { AbstractUswdsFormly } from '../uswds-formly';
 
 @Component({
     template: `
-    <usa-checkbox *ngIf="props.selectAllLable" [checked]="allChecked" [indeterminate]="checkIndeterminate()" 
-  (change)="checkAll($event)">{{props.selectAllLable}}</usa-checkbox>
-
-<ul class="usa-list usa-list--unstyled">
-  <li class="margin-left-3">
-    <usa-checkbox *ngFor="let item of props.options" [tile]="props.tile" (change)="onChange(item.key, item.checked)" [(ngModel)]="item.checked" >{{item.value}}</usa-checkbox>
-  </li>
-</ul>
-  `,
+    @if (props.selectAllLable) {
+      <usa-checkbox [checked]="allChecked" [indeterminate]="checkIndeterminate()"
+      (change)="checkAll($event)">{{props.selectAllLable}}</usa-checkbox>
+    }
+    
+    <ul class="usa-list usa-list--unstyled">
+      <li class="margin-left-3">
+        @for (item of props.options; track item) {
+          <usa-checkbox [tile]="props.tile" (change)="onChange(item.key, item.checked)" [(ngModel)]="item.checked" >{{item.value}}</usa-checkbox>
+        }
+      </li>
+    </ul>
+    `,
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: false
 })

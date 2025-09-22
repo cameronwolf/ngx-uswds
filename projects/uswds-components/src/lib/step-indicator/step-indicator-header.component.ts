@@ -4,24 +4,23 @@ import { UsaStepIndicatorComponent } from "./step-indicator.component";
 @Component({
     selector: `[UsaStepHeader]`,
     template: `
-    <ng-container *ngIf="template; else default">
+    @if (template) {
       <ng-template [ngTemplateOutlet]="template"></ng-template>
-    </ng-container>
-
-    <ng-template #default>
+    } @else {
       <span class="usa-step-indicator__heading-counter">
         <span class="usa-step-indicator__current-step">{{
           stepIndicator?.currentStep + 1
         }}</span>
         <span class="usa-step-indicator__total-steps">
           of {{ stepIndicator?.steps.length }}</span
-        >
-      </span>
-      <span class="usa-step-indicator__heading-text">{{
-        stepIndicator?.steps[stepIndicator?.currentStep].label
-      }}</span>
-    </ng-template>
-  `,
+          >
+        </span>
+        <span class="usa-step-indicator__heading-text">{{
+          stepIndicator?.steps[stepIndicator?.currentStep].label
+        }}</span>
+      }
+    
+    `,
     host: {
         class: 'usa-step-indicator__heading',
         '[class.margin-top-0]': "stepIndicator.headerPosition === 'top'",

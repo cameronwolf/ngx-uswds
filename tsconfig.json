@@ -8,7 +8,7 @@
     "declaration": false,
     "experimentalDecorators": true,
     "resolveJsonModule": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "es2022",
     "module": "es2022",
@@ -23,7 +23,7 @@
       "@gsa-sam/uswds-formly": [
         "dist/uswds-formly/uswds-formly",
         "dist/uswds-formly",
-        "projects/uswds-formly/src/public-api.ts",
+        "projects/uswds-formly/src/public-api.ts"
       ]
     },
     "rootDir": "."

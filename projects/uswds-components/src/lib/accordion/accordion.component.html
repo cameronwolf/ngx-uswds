@@ -1,5 +1,5 @@
- <div class="usa-accordion" [ngClass]="class" [class.usa-accordion--bordered]= "bordered" [attr.aria-multiselectable]="singleSelect ? true : 'undefined'">
-  <ng-template ngFor let-panel [ngForOf]="panels">
+<div class="usa-accordion" [ngClass]="class" [class.usa-accordion--bordered]= "bordered" [attr.aria-multiselectable]="singleSelect ? true : 'undefined'">
+  @for (panel of panels; track panel) {
     <div role="heading" id="{{panel.id}}-header" class="usa-accordion__heading" [attr.aria-level]="headerLevel">
       <button class="usa-accordion__button" [UsaAccordionToggle]="panel" (keydown)="onKeyDown($event, panel)">
         {{panel.header}}
@@ -12,5 +12,5 @@
       (@bodyExpansion.done)="onBodyExpansionEnd($event, panelContent)" [attr.aria-labelledby]="panel.id + '-header'">
       <ng-template [ngTemplateOutlet]="panel.contentTpl?.templateRef || null"></ng-template>
     </section>
-  </ng-template>
- </div> 
+  }
+</div>

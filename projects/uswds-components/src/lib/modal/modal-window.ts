@@ -1,4 +1,4 @@
-import {DOCUMENT} from '@angular/common';
+
 import {
   AfterViewInit,
   Component,
@@ -11,7 +11,8 @@ import {
   OnInit,
   Output,
   ViewChild,
-  ViewEncapsulation
+  ViewEncapsulation,
+  DOCUMENT
 } from '@angular/core';
 
 import {fromEvent, Observable, Subject} from 'rxjs';
@@ -45,13 +46,15 @@ let nextId = 0;
       <div class="usa-modal__main">
         <ng-content></ng-content>
       </div>
-
-      <button *ngIf="showClose" class="usa-button usa-modal__close" aria-label="Close this window" (click)="onCloseClicked()">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" class="usa-icon">
-          <path d="M0 0h24v24H0z" fill="none"/>
-          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-        </svg>
-      </button>
+    
+      @if (showClose) {
+        <button class="usa-button usa-modal__close" aria-label="Close this window" (click)="onCloseClicked()">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" class="usa-icon">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+      }
     </div>
     `,
     encapsulation: ViewEncapsulation.None,

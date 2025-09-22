@@ -1,10 +1,3 @@
-@use "sam-styles/packages/theme/settings"with ($sam-uswds-font-path: "/assets/uswds/fonts",
-  $sam-uswds-image-path: "/assets/uswds/img"
-);
-@use "sam-styles/packages/theme/variables"with ($sam-image-path: "/assets/uswds/img"
-);
-@forward "sam-styles";
-
 /** CSS for demo site here **/
 .site-sidenav {
   border: 2px solid rgba(0, 0, 0, .1);

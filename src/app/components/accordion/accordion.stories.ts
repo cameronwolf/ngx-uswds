@@ -1,29 +1,29 @@
-import { Meta, moduleMetadata } from '@storybook/angular';
+import { Meta, moduleMetadata } from "@storybook/angular";
 import {
   UsaAccordionComponent,
   UsaAccordionItem,
   UsaAccordionModule,
-} from '@gsa-sam/ngx-uswds';
-import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { action } from '@storybook/addon-actions';
-import { generateConfig } from 'src/sandbox/sandbox-utils';
+} from "@gsa-sam/ngx-uswds";
+import { CommonModule } from "@angular/common";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { action } from "@storybook/addon-actions";
+import { generateConfig } from "src/sandbox/sandbox-utils";
 
 declare var require: any;
 
-const accordionTemplate = require('!!raw-loader!./accordion-basic/accordion-basic.component.html');
-const accordionMultipleTemplate = require('!!raw-loader!./accordion-multiple/accordion-multiple.component.html');
+const accordionTemplate = require("!!raw-loader!./accordion-basic/accordion-basic.component.html");
+const accordionMultipleTemplate = require("!!raw-loader!./accordion-multiple/accordion-multiple.component.html");
 
-const footerTemplate = require('!!raw-loader!./accordion-overview.html');
+const footerTemplate = require("!!raw-loader!./accordion-overview.html");
 
 const actionsData = {
-  panelChange: action('Panel Change'),
-  shown: action('Shown'),
-  hidden: action('Hidden'),
+  panelChange: action("Panel Change"),
+  shown: action("Shown"),
+  hidden: action("Hidden"),
 };
 
 export default {
-  title: 'Components/Accordion',
+  title: "Components/Accordion",
   component: UsaAccordionComponent,
   subcomponents: { UsaAccordionItem },
   decorators: [
@@ -64,12 +64,11 @@ export const Basic = (args) => ({
 
 Basic.parameters = {
   preview: generateConfig(
-    'components/accordion/accordion-basic',
-    'AccordionBasicModule',
-    'accordion-basic'
+    "components/accordion/accordion-basic",
+    "AccordionBasicModule",
+    "accordion-basic",
   ),
 };
-
 
 export const Multiple = (args) => ({
   template: accordionMultipleTemplate.default,
@@ -89,8 +88,8 @@ export const Multiple = (args) => ({
 
 Multiple.parameters = {
   preview: generateConfig(
-    'components/accordion/accordion-multiple',
-    'AccordionMultipleModule',
-    'accordion-multiple'
+    "components/accordion/accordion-multiple",
+    "AccordionMultipleModule",
+    "accordion-multiple",
   ),
 };

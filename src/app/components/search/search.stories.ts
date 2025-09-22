@@ -1,21 +1,21 @@
 import { Meta, moduleMetadata } from "@storybook/angular";
 import { CommonModule } from "@angular/common";
 import { UsaSearchComponent, UsaSearchModule } from "@gsa-sam/ngx-uswds";
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from "@angular/forms";
 import { action } from "@storybook/addon-actions";
 import { generateConfig } from "src/sandbox/sandbox-utils";
 
 declare var require;
-const template = require('!!raw-loader!./search-basic/search-basic.component.html');
+const template = require("!!raw-loader!./search-basic/search-basic.component.html");
 
 const actionsData = {
-  searchTextChange: action('Text Change'),
-  blurUpdate: action('Blur'),
-  onTextSubmit: action('Submit'),
+  searchTextChange: action("Text Change"),
+  blurUpdate: action("Blur"),
+  onTextSubmit: action("Submit"),
 };
 
 export default {
-  title: 'Components/Search',
+  title: "Components/Search",
   component: UsaSearchComponent,
   decorators: [
     moduleMetadata({
@@ -23,11 +23,10 @@ export default {
     }),
   ],
   args: {
-    buttonText: 'Search',
-    size: 'big',
-  }
+    buttonText: "Search",
+    size: "big",
+  },
 } as Meta;
-
 
 export const Basic = (args) => ({
   template: template.default,
@@ -45,5 +44,9 @@ export const Basic = (args) => ({
 });
 
 Basic.parameters = {
-  preview: generateConfig('components/search/search-basic', 'SearchBasicModule', 'search-basic')
-}
+  preview: generateConfig(
+    "components/search/search-basic",
+    "SearchBasicModule",
+    "search-basic",
+  ),
+};

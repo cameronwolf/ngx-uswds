@@ -1,25 +1,28 @@
 import { Meta, moduleMetadata } from "@storybook/angular";
 import { CommonModule } from "@angular/common";
-import { UsaFileInputComponent, UsaFileInputModule, UsaTableModule } from "@gsa-sam/ngx-uswds";
-import { ReactiveFormsModule } from '@angular/forms';
+import {
+  UsaFileInputComponent,
+  UsaFileInputModule,
+  UsaTableModule,
+} from "@gsa-sam/ngx-uswds";
+import { ReactiveFormsModule } from "@angular/forms";
 import { FileInputTableModule } from "./file-input-table/file-input-table.module";
 import { FileInputUploadModule } from "./file-input-upload/file-input-upload.module";
 import { of } from "rxjs";
 import { delay } from "rxjs/operators";
 import { generateConfig } from "src/sandbox/sandbox-utils";
 
-
-const template = require('!!raw-loader!./file-input-basic/file-input-basic.component.html');
+const template = require("!!raw-loader!./file-input-basic/file-input-basic.component.html");
 
 export default {
-  title: 'Components/FileInput',
+  title: "Components/FileInput",
   component: UsaFileInputComponent,
   decorators: [
     moduleMetadata({
       imports: [
-        CommonModule, 
-        UsaFileInputModule, 
-        ReactiveFormsModule, 
+        CommonModule,
+        UsaFileInputModule,
+        ReactiveFormsModule,
         UsaTableModule,
         FileInputTableModule,
         FileInputUploadModule,
@@ -28,8 +31,8 @@ export default {
   ],
   args: {
     multiple: false,
-    acceptFileType: '.pdf,.csv',
-    id: 'file-input-basic',
+    acceptFileType: ".pdf,.csv",
+    id: "file-input-basic",
     hint: undefined,
     disabled: false,
     selectedFiles: [],
@@ -37,7 +40,7 @@ export default {
     displayFileInfo: true,
   },
   argTypes: {
-    hint: {type: 'string'},
+    hint: { type: "string" },
   },
 } as Meta;
 
@@ -56,24 +59,35 @@ export const Basic = (args) => ({
       // Consider upload as success after 3 second mocked delay
       return of(true).pipe(delay(3000));
     },
-  }
+  },
 });
 
 Basic.parameters = {
-  preview: generateConfig('components/file-input/file-input-basic', 'FileInputBasicModule', 'file-input-basic')
-}
-
+  preview: generateConfig(
+    "components/file-input/file-input-basic",
+    "FileInputBasicModule",
+    "file-input-basic",
+  ),
+};
 
 export const InputWithTable = () => ({
-  template: '<file-input-table></file-input-table>',
+  template: "<file-input-table></file-input-table>",
 });
 InputWithTable.parameters = {
-  preview: generateConfig('components/file-input/file-input-table', 'FileInputTableModule', 'file-input-table')
-}
+  preview: generateConfig(
+    "components/file-input/file-input-table",
+    "FileInputTableModule",
+    "file-input-table",
+  ),
+};
 
 export const ServerUpload = () => ({
-  template: '<file-input-upload></file-input-upload>'
-})
+  template: "<file-input-upload></file-input-upload>",
+});
 ServerUpload.parameters = {
-  preview: generateConfig('components/file-input/file-input-upload', 'FileInputUploadModule', 'file-input-upload')
-}
+  preview: generateConfig(
+    "components/file-input/file-input-upload",
+    "FileInputUploadModule",
+    "file-input-upload",
+  ),
+};

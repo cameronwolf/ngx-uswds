@@ -9,7 +9,8 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-a11y",
     "@etchteam/storybook-addon-css-variables-theme",
-    "@storybook/addon-mdx-gfm"
+    "@storybook/addon-mdx-gfm",
+    "@chromatic-com/storybook"
   ],
 
   "framework": {
@@ -17,7 +18,5 @@ module.exports = {
     options: {}
   },
 
-  docs: {
-    autodocs: true
-  }
+  docs: {}
 }

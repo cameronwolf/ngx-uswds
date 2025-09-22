@@ -1,5 +1,10 @@
 import { Meta, moduleMetadata } from "@storybook/angular";
-import { UsaDatePicker, UsaDatePickerButton, UsaDatePickerModule, UsaDatePickerWrapper } from '@gsa-sam/ngx-uswds';
+import {
+  UsaDatePicker,
+  UsaDatePickerButton,
+  UsaDatePickerModule,
+  UsaDatePickerWrapper,
+} from "@gsa-sam/ngx-uswds";
 import { CommonModule } from "@angular/common";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { action } from "@storybook/addon-actions";
@@ -13,37 +18,35 @@ import { generateConfig } from "src/sandbox/sandbox-utils";
 
 declare var require: any;
 
-const template = require('!!raw-loader!./datepicker-basic/datepicker-basic.component.html');
+const template = require("!!raw-loader!./datepicker-basic/datepicker-basic.component.html");
 
-const footer = require('!!raw-loader!./datepicker-overview.html');
-
+const footer = require("!!raw-loader!./datepicker-overview.html");
 
 const actionsData = {
-  calendarOpen: action('Calendar Open'),
-  calendarClosed: action('Calendar Closed'),
-}
+  calendarOpen: action("Calendar Open"),
+  calendarClosed: action("Calendar Closed"),
+};
 
 export default {
-  title: 'Components/DatePicker',
+  title: "Components/DatePicker",
   component: UsaDatePicker,
-  subcomponents: 
-  {
-    UsaDatePickerWrapper, 
-    UsaDatePickerButton
+  subcomponents: {
+    UsaDatePickerWrapper,
+    UsaDatePickerButton,
   },
   decorators: [
     moduleMetadata({
       imports: [
-        CommonModule, 
-        UsaDatePickerModule, 
-        BrowserAnimationsModule, 
+        CommonModule,
+        UsaDatePickerModule,
+        BrowserAnimationsModule,
         FormsModule,
         DatepickerDisabledModule,
         DatepickerFilterModule,
         DatepickerFormatModule,
-        DatepickerValidationModule
+        DatepickerValidationModule,
       ],
-      declarations: [ DatepickerBasicComponent ],
+      declarations: [DatepickerBasicComponent],
     }),
   ],
 } as Meta;
@@ -51,8 +54,7 @@ export default {
 export const Overview = () => ({
   template: footer.default,
 });
-Overview.parameters = {options: {showPanel: false}};
-
+Overview.parameters = { options: { showPanel: false } };
 
 export const DatePickerBasic = () => ({
   template: template.default,
@@ -63,41 +65,57 @@ export const DatePickerBasic = () => ({
 });
 
 DatePickerBasic.parameters = {
-  preview: generateConfig('components/datepicker/datepicker-basic', 'DatepickerBasicModule', 'datepicker-basic')
-}
-
+  preview: generateConfig(
+    "components/datepicker/datepicker-basic",
+    "DatepickerBasicModule",
+    "datepicker-basic",
+  ),
+};
 
 export const DatepickerFilter = () => ({
-  template: `<datepicker-filter></datepicker-filter>`
+  template: `<datepicker-filter></datepicker-filter>`,
 });
 
 DatepickerFilter.parameters = {
-  preview: generateConfig('components/datepicker/datepicker-filter', 'DatepickerFilterModule', 'datepicker-filter')
-}
-
+  preview: generateConfig(
+    "components/datepicker/datepicker-filter",
+    "DatepickerFilterModule",
+    "datepicker-filter",
+  ),
+};
 
 export const DatepickerFormat = () => ({
-  template: `<datepicker-format></datepicker-format>`
+  template: `<datepicker-format></datepicker-format>`,
 });
 
 DatepickerFormat.parameters = {
-  preview: generateConfig('components/datepicker/datepicker-format', 'DatepickerFormatModule', 'datepicker-format')
-}
-
+  preview: generateConfig(
+    "components/datepicker/datepicker-format",
+    "DatepickerFormatModule",
+    "datepicker-format",
+  ),
+};
 
 export const DatepickerValidation = () => ({
-  template: `<datepicker-validation></datepicker-validation>`
+  template: `<datepicker-validation></datepicker-validation>`,
 });
 
 DatepickerValidation.parameters = {
-  preview: generateConfig('components/datepicker/datepicker-validation', 'DatepickerValidationModule', 'datepicker-validation')
-}
-
+  preview: generateConfig(
+    "components/datepicker/datepicker-validation",
+    "DatepickerValidationModule",
+    "datepicker-validation",
+  ),
+};
 
 export const DatepickerDisabled = () => ({
-  template: `<datepicker-disabled></datepicker-disabled>`
+  template: `<datepicker-disabled></datepicker-disabled>`,
 });
 
 DatepickerDisabled.parameters = {
-  preview: generateConfig('components/datepicker/datepicker-disabled', 'DatepickerDisabledModule', 'datepicker-disabled')
-}
+  preview: generateConfig(
+    "components/datepicker/datepicker-disabled",
+    "DatepickerDisabledModule",
+    "datepicker-disabled",
+  ),
+};

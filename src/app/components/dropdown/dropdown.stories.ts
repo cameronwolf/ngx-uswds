@@ -1,67 +1,78 @@
 import { Meta, moduleMetadata } from "@storybook/angular";
 import { CommonModule } from "@angular/common";
 import { UsaDropdownComponent, UsaDropdownModule } from "@gsa-sam/ngx-uswds";
-import {  ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from "@angular/forms";
 import { generateConfig } from "src/sandbox/sandbox-utils";
 import { DropdownFormsModule } from "./dropdown-forms/dropdown-forms.module";
 
 declare var require;
 
-const basicTemplate = require('!!raw-loader!./dropdown-basic/dropdown-basic.component.html');
+const basicTemplate = require("!!raw-loader!./dropdown-basic/dropdown-basic.component.html");
 
 export default {
-  title: 'Components/Dropdown',
+  title: "Components/Dropdown",
   component: UsaDropdownComponent,
   decorators: [
     moduleMetadata({
-      imports: [CommonModule, UsaDropdownModule, DropdownFormsModule, ReactiveFormsModule],
+      imports: [
+        CommonModule,
+        UsaDropdownModule,
+        DropdownFormsModule,
+        ReactiveFormsModule,
+      ],
     }),
   ],
   args: {
     disabled: false,
-    name: 'basicDropdown',
+    name: "basicDropdown",
     options: [
       {
-        label: '--Select--',
+        label: "--Select--",
         value: null,
       },
       {
-        label: 'Option A',
-        value: 'value1'
+        label: "Option A",
+        value: "value1",
       },
       {
-        label: 'Option B',
-        value: 'value2'
+        label: "Option B",
+        value: "value2",
       },
       {
-        label: 'Option C',
-        value: 'value3'
+        label: "Option C",
+        value: "value3",
       },
       {
-        label: 'Option D',
-        value: 'value4'
+        label: "Option D",
+        value: "value4",
       },
       {
-        label: 'Option E',
-        value: 'value5'
-      }
-    ]
-  }
+        label: "Option E",
+        value: "value5",
+      },
+    ],
+  },
 } as Meta;
-
 
 export const Basic = (args) => ({
   template: basicTemplate.default,
   props: args,
 });
 Basic.parameters = {
-  preview: generateConfig('components/dropdown/dropdown-basic', 'DropdownBasicModule', 'dropdown-basic')
+  preview: generateConfig(
+    "components/dropdown/dropdown-basic",
+    "DropdownBasicModule",
+    "dropdown-basic",
+  ),
 };
 
-
 export const DropdownForms = () => ({
-  template: `<dropdown-forms></dropdown-forms>`
+  template: `<dropdown-forms></dropdown-forms>`,
 });
 DropdownForms.parameters = {
-  preview: generateConfig('components/dropdown/dropdown-forms', 'DropdownFormsModule', 'dropdown-forms')
+  preview: generateConfig(
+    "components/dropdown/dropdown-forms",
+    "DropdownFormsModule",
+    "dropdown-forms",
+  ),
 };

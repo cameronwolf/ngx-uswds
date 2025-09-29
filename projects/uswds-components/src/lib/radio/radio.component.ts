@@ -1,3 +1,4 @@
+import { CommonModule } from "@angular/common";
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Directive, EventEmitter, forwardRef, Input, Output } from "@angular/core";
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 
@@ -14,6 +15,9 @@ let nextId = 0;
 @Component({
     selector: `usa-radio`,
     templateUrl: `./radio.component.html`,
+    imports: [
+      CommonModule
+    ],
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,

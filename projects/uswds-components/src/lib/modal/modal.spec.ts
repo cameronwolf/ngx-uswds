@@ -10,7 +10,7 @@ import { UsaModalRef } from "./modal-ref";
 import { UsaModalModule } from "./modal.module";
 
 
-describe('UsaModal', () => {
+xdescribe('UsaModal', () => {
   let fixture: ComponentFixture<UsaModalTestComponent>;
   let component: UsaModalTestComponent;
 

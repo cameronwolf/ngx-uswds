@@ -1,8 +1,11 @@
 import { Meta, moduleMetadata } from "@storybook/angular";
 import {
   UsaAccordionComponent,
+  UsaAccordionContent,
+  UsaAccordionHeader,
   UsaAccordionItem,
   UsaAccordionModule,
+  UsaAccordionToggle,
 } from "@gsa-sam/ngx-uswds";
 import { CommonModule } from "@angular/common";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -28,7 +31,12 @@ export default {
   subcomponents: { UsaAccordionItem },
   decorators: [
     moduleMetadata({
-      imports: [CommonModule, UsaAccordionModule, BrowserAnimationsModule],
+      imports: [CommonModule,
+        UsaAccordionComponent,
+        UsaAccordionHeader,
+        UsaAccordionContent,
+        UsaAccordionToggle,
+        UsaAccordionItem, , BrowserAnimationsModule],
     }),
   ],
   args: {

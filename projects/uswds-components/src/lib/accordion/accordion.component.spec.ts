@@ -71,9 +71,8 @@ describe('Accordion Component', () => {
   beforeEach(() => {
     TestBed.configureTestingModule(
       {
-        declarations: [TestComponent], 
-        imports: [UsaAccordionModule, BrowserAnimationsModule]
-      }
+    imports: [UsaAccordionModule, BrowserAnimationsModule, TestComponent]
+}
     );
     TestBed.overrideComponent(TestComponent, {set: {template: html}});
 
@@ -90,7 +89,7 @@ describe('Accordion Component', () => {
 
 @Component({
     selector: 'test-cmp', template: '',
-    standalone: false
+    imports: [UsaAccordionModule]
 })
 class TestComponent {
   activeIds: string | string[] = [];

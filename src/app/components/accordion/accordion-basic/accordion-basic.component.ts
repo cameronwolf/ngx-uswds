@@ -1,8 +1,17 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { UsaAccordionComponent, UsaAccordionHeader, UsaAccordionContent, UsaAccordionToggle, UsaAccordionItem } from '@gsa-sam/ngx-uswds';
 
 @Component({
   selector: 'accordion-basic',
   templateUrl: './accordion-basic.component.html',
+  imports: [
+    UsaAccordionComponent,
+    UsaAccordionHeader,
+    UsaAccordionContent,
+    UsaAccordionItem,
+    CommonModule
+  ]
 })
 export class AccordionBasicComponent {
   /**
@@ -30,7 +39,7 @@ export class AccordionBasicComponent {
   /**
    * Change the Header background color to the accent cool variation
    */
-  isAccentCoolHeader: boolean =false;
+  isAccentCoolHeader: boolean = false;
   /**
    * Heading level to use for accordion headers - possible inputs are anywhere from heading level 2 to 6.
    */

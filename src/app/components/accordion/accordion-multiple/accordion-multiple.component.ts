@@ -1,8 +1,17 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { UsaAccordionComponent, UsaAccordionHeader, UsaAccordionContent, UsaAccordionToggle, UsaAccordionItem } from '@gsa-sam/ngx-uswds';
 
 @Component({
   selector: 'accordion-multiple',
   templateUrl: './accordion-multiple.component.html',
+  imports: [
+    CommonModule,
+    UsaAccordionComponent,
+            UsaAccordionHeader,
+            UsaAccordionContent,
+            UsaAccordionItem,
+  ]
 })
 export class AccordionMultipleComponent {
   /**

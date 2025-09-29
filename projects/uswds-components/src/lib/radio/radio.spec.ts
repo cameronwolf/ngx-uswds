@@ -3,7 +3,7 @@ import { Component, ElementRef, ViewChild } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing"
 import { UntypedFormControl, ReactiveFormsModule } from "@angular/forms";
 import { UsaRadioGroupComponent } from "./radio-group.component";
-import { UsaRadioModule } from "./radio.module";
+import { UsaRadioComponent } from "./radio.component";
 
 @Component({
     template: `
@@ -48,7 +48,9 @@ describe('Radio Component', () => {
     fixture = TestBed.configureTestingModule({
       imports: [
         CommonModule,
-        UsaRadioModule,
+        // UsaRadioModule,
+        UsaRadioComponent,
+        UsaRadioGroupComponent,
         ReactiveFormsModule,
       ],
       declarations: [

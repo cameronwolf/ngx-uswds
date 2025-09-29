@@ -1,23 +1,11 @@
-import {
-  Component,
-  ContentChildren,
-  Input,
-  QueryList,
-  ElementRef,
-  AfterContentChecked,
-  EventEmitter,
-  Output,
-  Renderer2,
-  Directive,
-  Host,
-  Optional,
-} from '@angular/core';
+import { Component, ContentChildren, Input, QueryList, ElementRef, AfterContentChecked, EventEmitter, Output, Renderer2, Directive, Host, Optional, forwardRef } from '@angular/core';
 import { Key, KeyCode, MicrosfotKeys } from '../util/key';
 import { isString, findLast, getNextItemInList } from '../util/util';
 import { UsaAccordionItem, UsaAccordionChangeEvent } from './accordion-items';
 import { UsaAccordionConfig } from './accordion.config';
 import { AnimationEvent } from '@angular/animations';
 import { UsaExpansionAnimations } from './accordion-animations';
+import { CommonModule, NgClass, NgTemplateOutlet } from '@angular/common';
 
 @Component({
     selector: 'usa-accordion',
@@ -27,7 +15,7 @@ import { UsaExpansionAnimations } from './accordion-animations';
     host: {
         class: 'display-block',
     },
-    standalone: false
+    imports: [NgClass, forwardRef(() => UsaAccordionToggle), NgTemplateOutlet, CommonModule]
 })
 export class UsaAccordionComponent implements AfterContentChecked {
   @ContentChildren(UsaAccordionItem) panels: QueryList<UsaAccordionItem>;
@@ -314,8 +302,7 @@ export class UsaAccordionComponent implements AfterContentChecked {
         '[attr.aria-disabled]': 'panel.disabled && panel.expanded ? true : undefined',
         '[attr.aria-label]': 'panel.ariaLabel',
         '(click)': 'accordion.toggle(panel.id)',
-    },
-    standalone: false
+    }
 })
 export class UsaAccordionToggle {
   static ngAcceptInputType_UsaAccordionToggle: UsaAccordionItem | '';

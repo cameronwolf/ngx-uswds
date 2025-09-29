@@ -8,22 +8,20 @@ import {
 import { UsaAccordionComponent, UsaAccordionToggle } from "./accordion.component";
 
 @NgModule({
-  imports: [
-    CommonModule,
-  ],
-  declarations: [
-    UsaAccordionComponent,
-    UsaAccordionHeader,
-    UsaAccordionContent,
-    UsaAccordionToggle,
-    UsaAccordionItem
-  ],
-  exports: [
-    UsaAccordionComponent,
-    UsaAccordionHeader,
-    UsaAccordionContent,
-    UsaAccordionToggle,
-    UsaAccordionItem
-  ]
+    // imports: [
+    //     CommonModule,
+    //     UsaAccordionComponent,
+    //     UsaAccordionHeader,
+    //     UsaAccordionContent,
+    //     UsaAccordionToggle,
+    //     UsaAccordionItem,
+    // ],
+    // exports: [
+    //     UsaAccordionComponent,
+    //     UsaAccordionHeader,
+    //     UsaAccordionContent,
+    //     UsaAccordionToggle,
+    //     UsaAccordionItem
+    // ]
 })
 export class UsaAccordionModule {}

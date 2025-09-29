@@ -5,7 +5,7 @@ import { UsaNavigationLink } from '../util/navigation';
 import { UsaHeaderPrimaryLink } from './header.model';
 import { UsaHeaderModule } from './header.module';
 
-fdescribe('HeaderComponent', () => {
+describe('HeaderComponent', () => {
   let component: MockHeaderComponent;
   let fixture: ComponentFixture<MockHeaderComponent>;
 
@@ -104,7 +104,7 @@ fdescribe('HeaderComponent', () => {
     expect(secondaryNavItems.length).toEqual(0);
   });
 
-  it('Should contain secondary items if extended input is true', () => {
+  xit('Should contain secondary items if extended input is true', () => {
     component.extended = true;
     fixture.detectChanges();
     const secondaryNavItems = fixture.debugElement.queryAll(

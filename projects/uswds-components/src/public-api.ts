@@ -98,7 +98,6 @@ export * from './lib/character-count/character-count.module';
 export * from './lib/character-count/character-count.directive';
 
 // Radio
-export * from './lib/radio/radio.module';
 export * from './lib/radio/radio.component';
 export * from './lib/radio/radio-group.component';
 

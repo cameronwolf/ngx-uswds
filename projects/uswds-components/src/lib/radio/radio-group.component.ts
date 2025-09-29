@@ -8,7 +8,6 @@ import { UsaRadioComponent } from "./radio.component";
  */
 @Directive({
     selector: '[usaRadioGroupLabel]',
-    standalone: false
 })
 export class UsaRadioGroupLabel {}
 
@@ -27,7 +26,6 @@ export class UsaRadioGroupLabel {}
         },
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
 })
 export class UsaRadioGroupComponent implements AfterContentInit, OnDestroy, ControlValueAccessor {
 

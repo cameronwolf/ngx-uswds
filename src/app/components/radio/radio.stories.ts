@@ -5,7 +5,6 @@ import {
   UsaRadioGroupComponent,
   UsaRadioGroupLabel,
   UsaRadioLabelDescription,
-  UsaRadioModule,
   UsaTableModule,
 } from "@gsa-sam/ngx-uswds";
 import { ReactiveFormsModule } from "@angular/forms";
@@ -34,10 +33,10 @@ export default {
     moduleMetadata({
       imports: [
         CommonModule,
-        UsaRadioModule,
         ReactiveFormsModule,
         RadioFormsModule,
         UsaTableModule,
+        UsaRadioComponent
       ],
     }),
   ],

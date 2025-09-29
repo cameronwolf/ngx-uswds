@@ -9,7 +9,7 @@ import { USWDSFormlyDatePickerComponent } from './types/datepicker';
 
 import { FormlyWrapperFormFieldComponent } from './wrappers/form-field.wrapper';
 import {
-  UsaRadioModule,
+  // UsaRadioModule,
   UsaSearchModule,
   UsaCheckboxModule,
   UsaDatePickerModule,
@@ -17,6 +17,10 @@ import {
   UsaAffixModule,
   UsaDropdownModule,
   UsaTextareaModule,
+  UsaRadioComponent,
+  UsaRadioGroupComponent,
+  UsaRadioGroupLabel,
+  UsaRadioLabelDescription,
 } from '@gsa-sam/ngx-uswds';
 import { USWDSFormlyMultiCheckboxComponent } from './types/multicheckbox';
 import { FormlySelectModule } from '@ngx-formly/core/select';
@@ -41,7 +45,10 @@ import { USWDSFormlyTextAreaComponent } from './types/textarea';
     FormsModule,
     ReactiveFormsModule,
     UsaSearchModule,
-    UsaRadioModule,
+    UsaRadioComponent,
+    UsaRadioLabelDescription,
+    UsaRadioGroupComponent,
+    UsaRadioGroupLabel,
     UsaTextareaModule,
     UsaCheckboxModule,
     UsaDatePickerModule,

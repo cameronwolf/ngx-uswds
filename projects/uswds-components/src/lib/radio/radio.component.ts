@@ -6,7 +6,6 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
     host: {
         class: 'usa-checkbox__label-description'
     },
-    standalone: false
 })
 export class UsaRadioLabelDescription { }
 
@@ -23,7 +22,6 @@ let nextId = 0;
         },
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
 })
 export class UsaRadioComponent implements ControlValueAccessor{
 

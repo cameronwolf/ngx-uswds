@@ -15,7 +15,7 @@
       }
     </thead>
     <tbody>
-      @for (data of displayedData; track trackBy ? trackBy : undefined(i, data); let i = $index) {
+      @for (data of displayedData; track trackBy ? trackBy : undefined; let i = $index) {
         <ng-container
         [ngTemplateOutlet]="dataTmpl" [ngTemplateOutletContext]="{data: data, index: i}"> </ng-container>
       }
